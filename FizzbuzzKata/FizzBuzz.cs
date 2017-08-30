@@ -10,14 +10,33 @@ namespace FizzbuzzKata
     {
         public string FizzbuzzChecker(int input)
         {
-            if(input==1)
+            if (DivisibleBy3(input) && DivisibleBy5(input))
             {
-                return "1";
+                return "FizzBuzz";
             }
-            else 
+            if (DivisibleBy3(input))
             {
-                return "2";
-            }            
+                return "Fizz";
+            }
+            if (DivisibleBy5(input))
+            {
+                return "Buzz";
+            }
+            else
+            {
+                return "" + input;
+            }
+
+        }
+
+        private static bool DivisibleBy5(int input)
+        {
+            return input % 5 == 0;
+        }
+
+        private static bool DivisibleBy3(int input)
+        {
+            return input % 3 == 0;
         }
     }
 }
